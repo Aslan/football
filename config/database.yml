@@ -1,0 +1,30 @@
+# SQLite version 3.x
+#   gem install sqlite3-ruby (not necessary on OS X Leopard)
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: football_development
+  pool: 5
+  username: root
+  password: 
+# host: localhost
+  
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: football_test
+  pool: 5
+  username: root
+  password:
+# socket: /tmp/mysql.sock
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: football_productioin
+  pool: 5
+  username: root 
+  password: 
