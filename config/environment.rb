@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'acl9', :version => '0.12.0'
   config.gem 'authlogic', :version => '2.1.3'
+  config.gem 'will_paginate', :version => "2.3.12"
   #config.gem "quantipay-authlogic_haapi", :lib => "authlogic_haapi", :version => '1.0.4'
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

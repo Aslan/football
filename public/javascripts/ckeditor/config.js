@@ -1,0 +1,1 @@
+/Users/Aslan/Documents/projects/football/public/javascripts/ckcustom.js

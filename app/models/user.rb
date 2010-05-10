@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # acts_as_authorization_subject
   
   has_and_belongs_to_many :roles
+  has_many :posts
   
   # attr_accessor :crypted_password_confirmation
   def deliver_password_reset_instructions!(url)

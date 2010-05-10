@@ -1,0 +1,4 @@
+<% @page_title = "#{@archive_title} - westlasoccer.com" -%>
+
+<%= render :partial => 'posts/post', :collection => @posts %>
+<div class="flickr_pagination"><%= will_paginate @posts %></div>
