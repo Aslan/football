@@ -1,0 +1,32 @@
+<% title "Comment" %>
+
+<p>
+  <strong>Author:</strong>
+  <%=h @comment.user_id %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%=h @comment.content %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%=h @comment.active %>
+</p>
+<p>
+  <strong>Ancestory:</strong>
+  <%=h @comment.ancestory %>
+</p>
+<p>
+  <strong>Commentable:</strong>
+  <%=h @comment.commentable_id %>
+</p>
+<p>
+  <strong>Commentable Type:</strong>
+  <%=h @comment.commentable_type %>
+</p>
+
+<p>
+  <%#= link_to "Edit", edit_post_comment_path(@post) %> |
+  <%#= link_to "Destroy", @comment, :confirm => 'Are you sure?', :method => :delete %> |
+  <%#= link_to "View All", comments_path %>
+</p>

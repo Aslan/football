@@ -1,0 +1,15 @@
+one:
+  author: 1
+  content: MyText
+  active: false
+  ancestory: MyString
+  commentable_id: 1
+  commentable_type: MyString
+
+two:
+  author: 1
+  content: MyText
+  active: false
+  ancestory: MyString
+  commentable_id: 1
+  commentable_type: MyString
