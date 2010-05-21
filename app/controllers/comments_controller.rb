@@ -2,20 +2,15 @@ class CommentsController < ApplicationController
 	def index
 		@post = Post.find(params[:post_id])
 		@commentable = find_commentable
-		puts "kkk"
-puts y @commentable
-puts y @commentable.comments
 	  @comments = @commentable.comments
-	
   end
   
   def show
-
 		@commentable = find_commentable
 		puts y @commentable
     @comment = Comment.find(params[:id])
   end
-  
+
   def new
 		@post = Post.find(params[:post_id])
     @comment = Comment.new
@@ -24,14 +19,11 @@ puts y @commentable.comments
   def create
 		@commentable = find_commentable
 		params[:comment].merge!(:user_id => current_user.id)
-		puts y params[:comment]
     @comment = @commentable.comments.build(params[:comment])
-	# @comment.user = current_user
-		
 		@comment.parent_id = nil if @comment.ancestory.nil?
     if @comment.save
       flash[:notice] = "Successfully created comment."
-      redirect_to :id => nil
+      redirect_to :back 
     else
       render :action => 'new'
     end

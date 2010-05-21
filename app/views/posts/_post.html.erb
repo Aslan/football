@@ -1,7 +1,12 @@
 <div class="post">
-  <ol>
-      <li><%= post.title %></li>
-			<p><%= post.body %><br>by <%= post.get_author %>
-  </ol>
+  <div class="side">
+    <div class="number">#<%= post.get_author %></div>
+    <div class="published_at"><%= published_on(post) %></div>
+    <div class="comments_count"><%= link_to pluralize(post.comments.size, 'comment'), post_path(:id => post, :anchor => 'comments') %></div>
+  </div>
+  <div class="main">
+    <h2><%= link_to_unless_current h(post.title), post %></h2>
+    <div class="description"><%= post.body %></div>
+  </div>
 </div>
 
