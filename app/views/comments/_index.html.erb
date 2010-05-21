@@ -1,0 +1,12 @@
+<% title "Comments" %>
+<div id="comments">
+	<% for comment in @comments %>
+  		<div class="comment">
+    		<%= distance_of_time_in_words(comment.created_at, Time.now)%> ago <%= comment.author.login -%> said...: <%= comment.content -%>
+  		</div>
+	<% end %>
+</div>
+
+<h2>New Comment</h2>
+<%= render :partial => "comments/form"%>
+

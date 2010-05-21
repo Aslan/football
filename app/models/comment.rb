@@ -15,7 +15,7 @@ class Comment < ActiveRecord::Base
 	belongs_to :commentable, :polymorphic => true
 	has_ancestry
 	belongs_to :user
-	attr_accessible :user_id
+	attr_accessible :user_id, :content, :active, :ancestory, :commentable_id, :commentable_type
 	
-  attr_accessible :author, :content, :active, :ancestory, :commentable_id, :commentable_type
+	def author; self.user; end
 end
