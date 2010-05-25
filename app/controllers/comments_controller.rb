@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
   
   def show
 		@commentable = find_commentable
-		puts y @commentable
     @comment = Comment.find(params[:id])
   end
 
@@ -18,14 +17,21 @@ class CommentsController < ApplicationController
   
   def create
 		@commentable = find_commentable
+		@comments_count = @commentable.comments.size
 		params[:comment].merge!(:user_id => current_user.id)
     @comment = @commentable.comments.build(params[:comment])
 		@comment.parent_id = nil if @comment.ancestory.nil?
     if @comment.save
       flash[:notice] = "Successfully created comment."
-      redirect_to :back 
+			respond_to do |format|
+				format.html {redirect_to :back }
+				format.js
+			end
     else
-      render :action => 'new'
+      flash[:notice] = "No Comment?."
+			respond_to do |format|
+				format.js
+			end
     end
   end
   
