@@ -1,0 +1,5 @@
+$("#new_comment").before('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
+//$("#flash_notice").html('<%= escape_javascript(flash.delete(:notice)) %>');
+$("#comments_count").html("<%= pluralize(@comments_count + 1, 'comment') %>");
+$("#comments").append("<%= escape_javascript(render(:partial => 'comments/ajax_comment', :object => @comment)) %>");
+$("#new_comment")[0].reset();

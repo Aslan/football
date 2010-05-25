@@ -16,6 +16,6 @@ class Comment < ActiveRecord::Base
 	has_ancestry
 	belongs_to :user
 	attr_accessible :user_id, :content, :active, :ancestory, :commentable_id, :commentable_type
-	
+	validates_presence_of :content
 	def author; self.user; end
 end
