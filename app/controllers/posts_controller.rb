@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
 		@comments = @post.comments
+		@commentable = @post # because i like to have a polymorphic names inside comments views. 
   end
   
   def new
