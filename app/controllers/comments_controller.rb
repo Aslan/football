@@ -28,9 +28,10 @@ class CommentsController < ApplicationController
 				format.js
 			end
     else
-      flash[:notice] = "No Comment?."
+      flash[:error] = "No Comments?."
 			respond_to do |format|
-				format.js
+				format.html {redirect_to :back }
+				format.js { render :template => 'comments/no_comment.js'}
 			end
     end
   end
