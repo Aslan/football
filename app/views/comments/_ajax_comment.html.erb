@@ -1,4 +1,4 @@
 <div class="comment">
 	<%= distance_of_time_in_words(@comment.created_at, Time.now)%> ago <%= @comment.author.login -%> said...: <%= @comment.content -%> 
-	<%= link_to 'Reply', @post) %>
+	<%= link_to 'Reply', @post %>
 </div>

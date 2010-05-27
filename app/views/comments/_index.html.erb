@@ -1,9 +1,7 @@
 <% title "Comments" %>
 <div id="comments">
-	<% for comment in @comments %>
-  		<div class="comment">
-    		<%= distance_of_time_in_words(comment.created_at, Time.now)%> ago <%= comment.author.login -%> said...: <%= comment.content -%>
-  		</div>
+	<% for @comment in @comments %>
+		<%= render :partial => 'comments/ajax_comment'%>
 	<% end %>
 </div>
 <div id="comments_form">
