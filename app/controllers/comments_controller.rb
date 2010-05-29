@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
   
   def create
 		@commentable = find_commentable
-		@comments_count = @commentable.comments.size
 		params[:comment].merge!(:user_id => current_user.id)
     @comment = @commentable.comments.build(params[:comment])
 		@comment.parent_id = nil if @comment.ancestory.nil?
