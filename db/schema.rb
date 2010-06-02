@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20100519230325) do
     t.integer  "user_id",                            :null => false
     t.text     "content"
     t.boolean  "active",           :default => true, :null => false
-    t.string   "ancestory"
+    t.string   "ancestry"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.datetime "created_at"

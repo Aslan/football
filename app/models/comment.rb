@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
   # =======================
 
 	belongs_to :commentable, :polymorphic => true
-	has_ancestry
+  has_ancestry
 	belongs_to :user
 	attr_accessible :user_id, :content, :active, :ancestory, :commentable_id, :commentable_type
 	validates_presence_of :content
