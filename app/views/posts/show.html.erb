@@ -19,7 +19,7 @@
 </p>
 <% end %>
 <p>
-  <strong><div id="comments_count"><%= pluralize(@post.comments.size, 'comment') %></div> and <%=h @post.views_count || 0 %> Views</strong>
+  <strong><div id="comments_count"><%= pluralize(@commentable.comments.size, 'Comment') %></div> and <%=h @post.views_count || 0 %> Views</strong>
 </p>
 <%= render :partial => "comments/index", :object => @post %>
 

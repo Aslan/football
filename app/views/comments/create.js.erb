@@ -1,4 +1,4 @@
 $("#flash_message").html('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
-$("#comments_count").html("<%= pluralize(@comments_count + 1, 'comment') %>");
+$("#comments_count").html("<%= pluralize(@commentable.comments.size, 'comment') %>");
 $("#comments").append("<%= escape_javascript(render(:partial => 'comments/ajax_comment', :object => @comment)) %>");
 $("#new_comment")[0].reset();
