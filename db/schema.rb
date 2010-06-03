@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100603010214) do
+ActiveRecord::Schema.define(:version => 20100603012913) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",                            :null => false
@@ -23,12 +23,40 @@ ActiveRecord::Schema.define(:version => 20100603010214) do
   end
 
   create_table "events", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",                      :null => false
     t.string   "title"
     t.text     "body"
     t.datetime "time"
-    t.integer  "poll_id"
-    t.boolean  "active"
+    t.integer  "poll_id",                      :null => false
+    t.boolean  "active",     :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "poll_answers", :force => true do |t|
+    t.integer  "poll_id",                       :null => false
+    t.string   "body"
+    t.integer  "response_count", :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "poll_responses", :force => true do |t|
+    t.integer  "poll_answer_id", :null => false
+    t.integer  "user_id",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "polls", :force => true do |t|
+    t.integer  "user_id",                         :null => false
+    t.text     "body"
+    t.boolean  "radio",        :default => true,  :null => false
+    t.boolean  "active",       :default => true,  :null => false
+    t.boolean  "editable",     :default => false, :null => false
+    t.boolean  "visible",      :default => false, :null => false
+    t.datetime "published_at"
+    t.datetime "closed_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

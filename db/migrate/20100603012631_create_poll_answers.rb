@@ -1,9 +1,9 @@
 class CreatePollAnswers < ActiveRecord::Migration
   def self.up
     create_table :poll_answers do |t|
-      t.integer :poll_id
+      t.integer :poll_id, :null => false
       t.string :body
-      t.integer :response_count
+      t.integer :response_count, :default => 0
       t.timestamps
     end
   end
