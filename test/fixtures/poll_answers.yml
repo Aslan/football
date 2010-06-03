@@ -1,0 +1,9 @@
+one:
+  poll_id: 1
+  body: MyString
+  response_count: 1
+
+two:
+  poll_id: 1
+  body: MyString
+  response_count: 1

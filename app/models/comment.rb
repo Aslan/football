@@ -5,7 +5,7 @@ class Comment < ActiveRecord::Base
   #   user_id          : integer 
   #   content          : text 
   #   active           : boolean 
-  #   ancestory        : string 
+  #   ancestry         : string 
   #   commentable_id   : integer 
   #   commentable_type : string 
   #   created_at       : datetime 

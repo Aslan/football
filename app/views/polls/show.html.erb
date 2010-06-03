@@ -1,0 +1,40 @@
+<% title "Poll" %>
+
+<p>
+  <strong>User:</strong>
+  <%=h @poll.user_id %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%=h @poll.body %>
+</p>
+<p>
+  <strong>Radio:</strong>
+  <%=h @poll.radio %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%=h @poll.active %>
+</p>
+<p>
+  <strong>Published At:</strong>
+  <%=h @poll.published_at %>
+</p>
+<p>
+  <strong>Closed On:</strong>
+  <%=h @poll.closed_on %>
+</p>
+<p>
+  <strong>Editable:</strong>
+  <%=h @poll.editable %>
+</p>
+<p>
+  <strong>Visible:</strong>
+  <%=h @poll.visible %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_poll_path(@poll) %> |
+  <%= link_to "Destroy", @poll, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", polls_path %>
+</p>

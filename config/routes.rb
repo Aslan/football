@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :poll_responses
+
+  map.resources :poll_answers
+
+  map.resources :polls
+
+  map.resources :events
+
   
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"

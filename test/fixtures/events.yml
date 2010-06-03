@@ -1,5 +1,15 @@
 one:
-  name: MyString
+  user_id: 1
+  title: MyString
+  body: MyText
+  time: 2010-06-02 18:02:14
+  poll_id: 1
+  active: false
 
 two:
-  name: MyString
+  user_id: 1
+  title: MyString
+  body: MyText
+  time: 2010-06-02 18:02:14
+  poll_id: 1
+  active: false

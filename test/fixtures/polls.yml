@@ -1,0 +1,19 @@
+one:
+  user_id: 1
+  body: MyText
+  radio: false
+  active: false
+  published_at: 2010-06-02 18:22:55
+  closed_on: 2010-06-02 18:22:55
+  editable: false
+  visible: false
+
+two:
+  user_id: 1
+  body: MyText
+  radio: false
+  active: false
+  published_at: 2010-06-02 18:22:55
+  closed_on: 2010-06-02 18:22:55
+  editable: false
+  visible: false

@@ -1,0 +1,31 @@
+<% title "Polls" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Body</th>
+    <th>Radio</th>
+    <th>Active</th>
+    <th>Published At</th>
+    <th>Closed On</th>
+    <th>Editable</th>
+    <th>Visible</th>
+  </tr>
+  <% for poll in @polls %>
+    <tr>
+      <td><%=h poll.user_id %></td>
+      <td><%=h poll.body %></td>
+      <td><%=h poll.radio %></td>
+      <td><%=h poll.active %></td>
+      <td><%=h poll.published_at %></td>
+      <td><%=h poll.closed_on %></td>
+      <td><%=h poll.editable %></td>
+      <td><%=h poll.visible %></td>
+      <td><%= link_to "Show", poll %></td>
+      <td><%= link_to "Edit", edit_poll_path(poll) %></td>
+      <td><%= link_to "Destroy", poll, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Poll", new_poll_path %></p>
