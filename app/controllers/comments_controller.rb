@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 		@commentable = find_commentable
 		params[:comment].merge!(:user_id => current_user.id)
     @comment = @commentable.comments.build(params[:comment])
-		@comment.parent_id = nil if @comment.ancestory.nil?
+		@comment.parent_id = nil if @comment.ancestry.nil?
     if @comment.save
       flash[:notice] = "Successfully created comment."
 			respond_to do |format|
