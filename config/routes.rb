@@ -1,23 +1,25 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :poll_responses
-
-  map.resources :poll_answers
-
-  map.resources :polls
-
-  map.resources :events
-
   
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   map.resources :user_sessions
-  map.resources :events
+  
   map.resources :roles
   map.resources :users
-	map.resources :posts, :has_many => :comments
-	#   map.resources :posts, :only => [:index, :show] do |r|
-	# 	r.resources :comments, :except => :destroy
-	# end
+  map.resources :posts, :has_many => :comments
+  map.resources :events, :has_many => :comments
+  
+  map.resources :poll_responses
+  map.resources :poll_answers
+  map.resources :polls
+  
+  map.namespace :admin do |admin|
+    admin.resources :events, :has_one 
+    admin.resources :polls
+  end
+  #   map.resources :posts, :only => [:index, :show] do |r|
+  #   r.resources :comments, :except => :destroy
+  # end
   
   # The priority is based upon order of creation: first created -> highest priority.
 
