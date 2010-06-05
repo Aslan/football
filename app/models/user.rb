@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   
   has_and_belongs_to_many :roles
   has_many :posts
-  
+  has_many :events
   # attr_accessor :crypted_password_confirmation
   def deliver_password_reset_instructions!(url)
     reset_perishable_token!

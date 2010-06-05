@@ -1,0 +1,32 @@
+<% title "Event" %>
+
+<p>
+  <strong>User:</strong>
+  <%=h @event.author.login %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%=h @event.title %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%=@event.body %>
+</p>
+<p>
+  <strong>Time:</strong>
+  <%=h @event.time %>
+</p>
+<p>
+  <strong>Poll:</strong>
+  <%=h @event.poll_id %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%=h @event.active %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_event_path(@event) %> |
+  <%= link_to "Destroy", [:admin, @event], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_events_path %>
+</p>

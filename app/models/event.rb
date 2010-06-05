@@ -13,6 +13,6 @@ class Event < ActiveRecord::Base
   # =======================
 
   attr_accessible :user_id, :title, :body, :time, :poll_id, :active
-  belongs_to :users
+  belongs_to :author, :foreign_key => 'user_id', :class_name => 'User'
   has_one :poll
 end

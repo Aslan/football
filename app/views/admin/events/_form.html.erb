@@ -1,0 +1,25 @@
+<% form_for [:admin, @event] do |f| %>
+  <%= f.error_messages %>
+    <%= f.hidden_field :user_id, :value =>  current_user.id %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.cktext_area :body,:toolbar=>'Full', :swf_params=>{:assetable_type=>'User', :assetable_id=> current_user.id} %>
+  </p>
+  <p>
+    <%= f.label :time %><br />
+    <%= f.datetime_select :time %>
+  </p>
+  <p>
+    <%= f.label :poll_id %><br />
+    <%= f.text_field :poll_id %>
+  </p>
+  <p>
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
