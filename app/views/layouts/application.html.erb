@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title><%= h(yield(:title) || "Untitled") %></title>
-    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'application' , 'anytimec'%>
 	<%= javascript_include_tag 'ckeditor/ckeditor', 'ckeditor_autogrow' %>
-    <%= javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', 'application') %>
+    <%= javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', 'application', 'anytimec') %>
     <%= yield(:head) %>
   </head>
   <body>

@@ -11,6 +11,16 @@ $(document).ready(function() {
     })
 })
 
+$(function(){
+    $("#event_time").AnyTime_picker(  { 
+    //format: "%W, %M %D in the Year %z %E", firstDOW: 1 
+    format: "%Y-%m-%d %H:%i:00 %p",firstDOW: 0 
+    //        formatUtcOffset: "%: (%@)",
+    //        hideInput: true
+    } );    
+});
+
+
 // $(document).ready(function(){
 //     $("#comments a").click(function(event){
 //          $(this).parent().hide("slow");
