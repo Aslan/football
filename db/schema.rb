@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20100603012913) do
     t.string   "title"
     t.text     "body"
     t.datetime "time"
-    t.integer  "poll_id",                      :null => false
     t.boolean  "active",     :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20100603012913) do
     t.boolean  "visible",      :default => false, :null => false
     t.datetime "published_at"
     t.datetime "closed_on"
+    t.integer  "event_id",     :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

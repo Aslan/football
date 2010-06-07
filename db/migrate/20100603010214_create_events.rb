@@ -5,7 +5,6 @@ class CreateEvents < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.datetime :time
-      t.integer :poll_id,   :null => false
       t.boolean :active,    :default => true
       t.timestamps
     end

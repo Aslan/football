@@ -7,16 +7,12 @@
   </p>
   <p>
     <%= f.label :body %><br />
-    <%= f.cktext_area :body,:toolbar=>'Full', :swf_params=>{:assetable_type=>'User', :assetable_id=> current_user.id} %>
+    <%= f.cktext_area :body,:toolbar=>'Easy', :swf_params=>{:assetable_type=>'User', :assetable_id=> current_user.id} %>
   </p>
   <p>
     <%= f.label :time %><br />
     <%= f.text_field :time %>
     <%#= f.datetime_select :time %>
-  </p>
-  <p>
-    <%= f.label :poll_id %><br />
-    <%= f.text_field :poll_id %>
   </p>
   <p>
     <%= f.label :active %><br />

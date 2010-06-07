@@ -9,6 +9,7 @@ class CreatePolls < ActiveRecord::Migration
       t.boolean :visible, :default => false, :null => false #true -> responses to the poll are visible before responding 
       t.datetime :published_at
       t.datetime :closed_on
+      t.integer :event_id, :default => 0
       t.timestamps
     end
   end

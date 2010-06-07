@@ -10,12 +10,18 @@ CKEDITOR.editorConfig = function( config )
   config.PreserveSessionOnFileBrowser = true;
   // Define changes to default configuration here. For example:
   config.language = 'en';
-  // config.uiColor = '#AADC6E';
+  config.extraPlugins = 'ckeditor_autogrow,embed';
+  config.minHeight = 200;
+  config.maxHeight = 2000;
+  config.scayt_autoStartup = false;
+  config.disableNativeSpellChecker = false;
+  config.resize_enabled = false;
+  //config.uiColor = '#AADC6E';
 
   //config.ContextMenu = ['Generic','Anchor','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField','ImageButton','Button','BulletedList','NumberedList','Table','Form'] ;
   
-  config.height = '400px';
-  config.width = '600px';
+  //config.height = '400px';
+  config.width = '400px';
   
   //config.resize_enabled = false;
   //config.resize_maxHeight = 2000;
@@ -23,7 +29,7 @@ CKEDITOR.editorConfig = function( config )
   
   //config.startupFocus = true;
   
-  config.extraPlugins = "embed"; // works only with en, ru, ua languages
+  //config.extraPlugins = "embed"; // works only with en, ru, ua languages
   
   config.toolbar = 'Easy';
   
