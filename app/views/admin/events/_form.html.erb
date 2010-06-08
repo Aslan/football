@@ -10,9 +10,7 @@
     <%= f.cktext_area :body,:toolbar=>'Easy', :swf_params=>{:assetable_type=>'User', :assetable_id=> current_user.id} %>
   </p>
   <p>
-    <%= f.label :time %><br />
-    <%= f.text_field :time %>
-    <%#= f.datetime_select :time %>
+    The event date and time is <%= f.text_field :time %> and the poll <br />will close <%= text_field_tag "event[close_poll]", 2, :size => 2 %> hour(s) before the event starts.
   </p>
   <p>
     <%= f.label :active %><br />

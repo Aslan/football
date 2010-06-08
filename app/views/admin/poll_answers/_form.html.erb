@@ -1,0 +1,16 @@
+<% form_for @poll_answer do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :poll_id %><br />
+    <%= f.text_field :poll_id %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.label :response_count %><br />
+    <%= f.text_field :response_count %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,32 +1,32 @@
-<% form_for poll do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.label :radio %><br />
-    <%= f.check_box :radio %>
-  </p>
-  <p>
-    <%= f.label :active %><br />
-    <%= f.check_box :active %>
-  </p>
-  <p>
-    <%= f.label :published_at %><br />
-    <%= f.datetime_select :published_at %>
-  </p>
-  <p>
-    <%= f.label :closed_on %><br />
-    <%= f.datetime_select :closed_on %>
-  </p>
-  <p>
-    <%= f.label :editable %><br />
-    <%= f.check_box :editable %>
-  </p>
-  <p>
-    <%= f.label :visible %><br />
-    <%= f.check_box :visible %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+<p>
+  <strong>Body:</strong>
+  <%= poll.body %>
+</p>
+<p>
+    <%= render :partial => 'admin/poll_answers/answers', :collection => poll.poll_answers %>
+</p>
+
+<p>
+  <strong>Radio:</strong>
+  <%= poll.radio %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= poll.active %>
+</p>
+<p>
+  <strong>Published At:</strong>
+  <%= poll.published_at %>
+</p>
+<p>
+  <strong>Closed On:</strong>
+  <%= event_date(poll.closed_on) %>
+</p>
+<p>
+  <strong>Editable:</strong>
+  <%= poll.editable %>
+</p>
+<p>
+  <strong>Visible:</strong>
+  <%= poll.visible %>
+</p>

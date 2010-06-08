@@ -13,7 +13,7 @@ class Admin::EventsController < ApplicationController
   
   def create
     @event = Event.new(params[:event])
-    @event.poll = Poll.event_poll(:user_id => current_user.id)
+    @event.poll = Poll.event_poll(:user_id => current_user.id, :close_poll => params[:event ][:close_poll], :time => params[:event][:time])
     if @event.save
       flash[:notice] = "Successfully created event."
       redirect_to admin_event_path(@event)

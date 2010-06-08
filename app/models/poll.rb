@@ -25,8 +25,9 @@ class Poll < ActiveRecord::Base
   
   def self.event_poll(*args)
     params = args.extract_options!
-    poll = self.new(:user_id => params[:user_id] ,:body => "Are you in?" ,:active => true,:closed_on => "",
-    :editable => false,:visible => false)
+    poll_closed_on = params[:time].to_datetime - (params[:close_poll].to_i || 2).hours
+    poll = self.new(:user_id => params[:user_id] ,:body => "Are you in?" ,:active => true,:closed_on => poll_closed_on,
+    :editable => false,:visible => false, :published_at => params[:time].to_datetime)
     poll.poll_answers = [PollAnswer.new(:body => "Yes"), PollAnswer.new(:body => "No")] 
     poll
   end
