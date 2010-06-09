@@ -1,18 +1,18 @@
 class CommentsController < ApplicationController
 	def index
 		@post = Post.find(params[:post_id])
-		@commentable = find_commentable
-	  @comments = @commentable.comments
+    # @commentable = find_commentable
+    #     @comments = @commentable.comments
   end
   
   def show
-		@commentable = find_commentable
-    @comment = Comment.find(params[:id])
+    # @commentable = find_commentable
+    #     @comment = Comment.find(params[:id])
   end
 
   def new
-		@post = Post.find(params[:post_id])
-    @comment = Comment.new
+    # @post = Post.find(params[:post_id])
+    # @comment = Comment.new
   end
   
   def create

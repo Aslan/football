@@ -21,7 +21,8 @@ class Poll < ActiveRecord::Base
   attr_accessible :user_id, :body, :radio, :active, :published_at, :closed_on, :editable, :visible, :event_id
 
   has_many :poll_answers
-  has_many :comments, :as => :commentable
+  has_many :comments, :as => :commentable1
+  belongs_to :event
   
   def self.event_poll(*args)
     params = args.extract_options!

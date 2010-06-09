@@ -5,9 +5,8 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.find(params[:id])
-		@comments = @post.comments
-		@commentable = @post # because i like to have a polymorphic names inside comments views. 
+    @post = Post.find(params[:id], :include => :comments)
+    @comment_on = @post
   end
   
   def new

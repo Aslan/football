@@ -26,6 +26,12 @@
 </p>
 
 <p>
+  <strong><div id="comments_count"><%= pluralize(@event.comments.size, 'Comment') %></div> and <%= 0 %> Views</strong>
+</p>
+<%= render :partial => "comments/index", :locals => {:comments => @event.comments} %>
+<p>
+
+<p>
   <%= link_to "Edit", edit_admin_event_path(@event) %> |
   <%= link_to "Destroy", [:admin, @event], :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", admin_events_path %>

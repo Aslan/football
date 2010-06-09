@@ -11,11 +11,10 @@
   </tr>
   <% for event in @events %>
     <tr>
-      <td><%=h event.user_id %></td>
+      <td><%=h event.creator.login %></td>
       <td><%=h event.title %></td>
-      <td><%=h event.body %></td>
+      <td><%= event.body %></td>
       <td><%=h event.time %></td>
-      <td><%=h event.poll_id %></td>
       <td><%=h event.active %></td>
       <td><%= link_to "Show", event %></td>
       <td><%= link_to "Edit", edit_event_path(event) %></td>

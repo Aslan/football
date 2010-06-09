@@ -1,5 +1,5 @@
 <div id="flash_message"></div>
-<% form_for [@commentable, @commentable.comments.new]  do |f| -%>
+<% form_for [@comment_on, @comment_on.comments.new]  do |f| -%>
 	<%= f.error_messages %>
   <p>
 	<%= f.label :content, "Content" %><br />

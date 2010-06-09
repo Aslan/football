@@ -1,10 +1,9 @@
-<% title "Comments" %>
 <div id="comments">
-	<% for @comment in @comments %>
-		<%= render :partial => 'comments/ajax_comment'%>
+	<% for @comment in comments %>
+		<%= render :partial => 'comments/ajax_comment', :object => @comment %>
 	<% end %>
 </div>
 <div id="comments_form">
 	<h2>New Comment</h2>
-	<%= render :partial => "comments/form"%>
+	<%= render :partial => "comments/form" %>
 </div>
