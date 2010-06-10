@@ -26,7 +26,11 @@
   <%=h @event.updated_at %>
 </p>
 <% end %>
-
+<h2>Poll results</h2>
+<p>
+	<%= render :partial => 'polls/event_poll', :locals => {:poll => @event.poll} %>
+</p>
+<h2>Comments</h2>
 <p>
   <strong><div id="comments_count"><%= pluralize(@event.comments.size, 'Comment') %></div> and <%= 0 %> Views</strong>
 </p>

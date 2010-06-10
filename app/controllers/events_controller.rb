@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   end
   
   def show
-    @event = Event.find(params[:id], :include => [:poll, :comments])
+    @event = Event.find(params[:id], :include => [{:poll => {:poll_answers => {:poll_responses => :users}}}, :creator, {:comments => :user}])
     @comment_on = @event
   end
   
